@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Ranking Page</title>
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block site_css %}
+    <link rel="stylesheet" href="{% static "ranking_app/styles/ranking_page_style.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <div class="container-ranking-table-style">
+        <table class="table table-dark text-center col-4">
+            <thead>
+            <tr class="ranking-table-style-first-row">
+                <th scope="col">Ranking Position</th>
+                <th scope="col">User Nickname</th>
+                <th scope="col">User Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ranking_position in ranking_table %}
+                <tr class="ranking-table-style">
+                    <th scope="row" class="bg-warning">{{ forloop.counter }}</th>
+                    <th class="bg-warning">{{ ranking_position.user_nickname }}</th>
+                    <td class="bg-warning">{{ ranking_position.sum_of_all_user_points }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td class="bg-error">No objects yet.</td>
+                    <td class="bg-error">No objects yet.</td>
+                    <td class="bg-error">No objects yet.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}}

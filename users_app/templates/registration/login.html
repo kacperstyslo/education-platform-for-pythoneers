@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Login Page</title>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+{% endblock %}
+
+{% block site_css %}
+    <link rel="stylesheet" href="{% static 'users_app/styles/buttons_custom_style.css' %}"/>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.css"/>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {% for form_field in form %}
+            <div class="form-row justify-content-center">
+                <div class="form-group single-form-style col-10">
+                    {{ form_field|as_crispy_field }}
+                </div>
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn button-styled">Login!</button>
+    </form>
+    {% if form.errors %}
+        <script>Swal.fire({
+            title: 'Wrong credentials!',
+            text: "Given login or password is incorrect!",
+            icon: 'error',
+            iconColor: 'red',
+            confirmButtonText: 'Ok',
+            confirmButtonColor: "red"
+        })
+        </script>
+    {% endif %}
+{% endblock %}

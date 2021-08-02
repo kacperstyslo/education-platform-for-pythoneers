@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.8"
+
+services:
+  - docker
+
+before_script: pip install docker-compose
+
+script:
+  - docker-compose -f docker-compose.yml up --build -d
+  - docker exec -it education-platform-for-pythoneers bash -c "python manage.py test"
+
+notifications:
+  email:
+    on_error: never
+    on_failure: never
+    on_start: never
+    on_cancel: never

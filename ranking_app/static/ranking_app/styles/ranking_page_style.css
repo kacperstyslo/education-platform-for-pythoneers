@@ -1,0 +1,12 @@
+.container-ranking-table-style {
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+.ranking-table-style-first-row th, td,
+.ranking-table-style th, td {
+    border: solid 2px #000000 !important;
+    font-weight: bold;
+    font-size: 17px;
+}

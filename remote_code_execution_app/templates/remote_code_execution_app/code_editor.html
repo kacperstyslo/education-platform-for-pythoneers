@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>{{ chosen.task_title }}</title>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "remote_code_execution_app/js/display_tests_output.js" %}" type="text/javascript"></script>
+    <script>
+        const task_id = "{{ chosen.task_id }}";
+        const task_token = "{{ task_token }}";
+        const user_amounts_of_try = "{{ user_amounts_of_try }}";
+    </script>
+{% endblock %}
+
+{% block site_css %}
+    <link rel="stylesheet" href="{% static "remote_code_execution_app/styles/code_editor_styles.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col title-and-description-container-style">
+            <h1 style="color: gold;">{{ chosen.task_title }}</h1>
+            <p class="task-description-style">{{ chosen.task_description|safe }}</p>
+            <h5 class="task-description-style">Successfully submissions:
+                <span style="color:green; font-weight: bold;">{{ successful_submission_per_task }}</span>
+                Task success rate: <span style="color: green; font-weight: bold;">{{ success_rate_per_task }}</span></h5>
+        </div>
+        <div class="col-4 text-right p-0">
+            <a href="{% url "main-page" %}">
+                <button id="submit" class="btn-lg btn-danger buttons-style-return mr-3 col-1">X</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="row code-editor-container-style">
+    <textarea class="col-8 code-editor-style-window" id="code_editor" style="min-height: 102%;"
+              name="code">{{ exist.code }}{% if user_code %}{{ user_code }}{% else %}{{ chosen.task_starter }}{% endif %}
+    </textarea>
+
+        <div class="col-4 test-case-output-style-window" id="output">
+            <h2>Test Case Output</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-right p-0">
+            <button id="submit-button" class="btn buttons-style col-2 mr-1" style="background-color: gold;">
+                Submit Code
+            </button>
+            <button id="check-button" class="btn btn-success col-2 buttons-style">Check Code</button>
+        </div>
+    </div>
+
+{% endblock %}}

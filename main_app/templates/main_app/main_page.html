@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Challenges</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="{% static "main_app/js/display_tasks_list.js" %}"
+            type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <link rel="shortcut icon" href="{% static 'img/snake.png' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="{% static "main_app/styles/main_page_style.css" %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #0A043C;">
+     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="background-color: #0A043C; border:
+      none;">
+            <a class="navbar-brand nav-underline-animation" href="/" style="color: #ffffff;
+            font-size: 25px;">Tasks
+                for
+                real<span style="color: gold; font-size: 25px;"> Pythoneers</span></a>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar-main-page">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+               <div class="collapse navbar-collapse" id="navbar-main-page">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a class="nav-underline-animation" style="color: #ffffff; font-size: 22px;"
+                            href="{% url "ranking-page" %}"> Ranking</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a class="nav-underline-animation" style="color: gold; font-size: 22px;"
+                               onclick="return show_tasks_list('show_tasks_list');" href="#">Tasks List</a></li>
+                            <li><a class="nav-underline-animation" style="color: #ffffff; font-size: 22px;"
+                               href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a class="nav-underline-animation" style="color: #ffffff; font-size: 22px;"
+                               href="{% url "user-registration" %}">Register</a></li>
+                           <li><a class="nav-underline-animation" style="color: #ffffff; font-size: 22px;"
+                               href="{% url "user-login" %}">Log In</a></li>
+                        {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="task-list-container-style" id="main"></div>
+</body>
+</html>

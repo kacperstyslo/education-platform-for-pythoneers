@@ -1,0 +1,8 @@
+[MASTER]
+load-plugins=pylint_django
+django-settings-module=education_platform_for_pythoneers.settings
+
+disable=missing-docstring,empty-docstring
+
+[DESIGN]
+max-attributes=9

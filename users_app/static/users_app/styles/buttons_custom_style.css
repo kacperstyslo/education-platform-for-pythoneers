@@ -1,0 +1,12 @@
+.button-styled,
+.button-styled:hover {
+    color: #ffffff;
+    background-color: gold;
+    font-weight: bold;
+    float: right;
+    margin-right: 3rem;
+}
+
+.button-styled:hover {
+    opacity: 0.7;
+}

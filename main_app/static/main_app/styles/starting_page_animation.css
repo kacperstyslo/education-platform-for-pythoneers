@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
+body {
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    padding-top: 40vh;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+div {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div:first-of-type {
+    animation: showup 14s infinite;
+}
+
+div:last-of-type {
+    width: 0;
+    animation: reveal 14s infinite;
+}
+
+div:last-of-type span {
+    margin-left: -1000px;
+    animation: slidein 14s infinite;
+}
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: -1000px;
+    }
+    20% {
+        margin-left: -1000px;
+    }
+    35% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    20% {
+        opacity: 1;
+        width: 0;
+    }
+    30% {
+        width: 400px;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 400px;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}

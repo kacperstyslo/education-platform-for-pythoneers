@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Education platform for pythoners</title>
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block site_css %}
+    <link rel="stylesheet" href="{% static "main_app/styles/starting_page_animation.css" %}"/>
+    <link rel=" stylesheet" href="{% static "main_app/styles/css/fontello.css" %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+    <a href="{% url "main-page" %}">
+        <div>Tasks</div>
+        <div>
+            <span>for real</span>
+            <span style="color: gold;">Pythoneers</span>
+        </div>
+    </a>
+{% endblock %}
+

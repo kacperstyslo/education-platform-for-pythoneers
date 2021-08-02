@@ -1,0 +1,47 @@
+.title-and-description-container-style {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.task-description-style {
+    font-size: 20px;
+}
+
+.code-editor-container-style {
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.code-editor-style-window,
+.test-case-output-style-window {
+    overflow: hidden;
+    border: solid 3px #0A043C;
+    font-size: 20px;
+    background-color: #ffffff;
+}
+
+.test-case-output-style-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.buttons-style {
+    color: #ffffff;
+    height: 4rem;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buttons-style:hover {
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+.buttons-style-return {
+    font-weight: bold;
+    font-size: 15px;
+    height: 2rem;
+    padding: 0;
+}
+
+
