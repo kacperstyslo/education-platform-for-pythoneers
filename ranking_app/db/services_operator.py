@@ -2,6 +2,7 @@ from typing import Dict, List
 
 from django.contrib.auth import get_user_model
 
+# Own
 from ranking_app.models import RankingTable
 from users_app.models import UsersTasksSolutions
 

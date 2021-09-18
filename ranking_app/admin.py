@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Own
 from ranking_app.models import RankingTable
 
 

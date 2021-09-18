@@ -1,3 +1,4 @@
+# Own
 from task_statistics_app.models import TasksStatistics
 from users_app.models import UsersTasksSolutions
 

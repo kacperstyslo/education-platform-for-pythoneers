@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Own
 from main_app.models import Tasks
 
 

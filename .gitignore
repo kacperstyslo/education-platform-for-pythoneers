@@ -142,6 +142,7 @@ cython_debug/
 data
 .idea
 .ebextensions
+education_platform_for_pythoneers_env
 education_platform_for_pythoneers_dev_env
 education_platform_for_pythoneers/prod_settings.py
 remote_code_execution_app/tests/user_solution.py

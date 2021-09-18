@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Own
 from users_app.models import UsersTasksSolutions
 
 

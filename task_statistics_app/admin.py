@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Own
 from task_statistics_app.models import TasksStatistics
 
 

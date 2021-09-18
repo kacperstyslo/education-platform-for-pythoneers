@@ -1,7 +1,9 @@
 from django.views.generic.list import ListView
 
+# Own
 from ranking_app.models import RankingTable
 
+# Own
 # My services
 from ranking_app.services.points_calculator import UsersPointsCalculator
 

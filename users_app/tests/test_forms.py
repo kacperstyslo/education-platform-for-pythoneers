@@ -1,14 +1,15 @@
 from django.test import TestCase
 
+# Own
 from users_app.forms import UserRegistrationForm
 
 
 class TestUserRegistrationForm(TestCase):
-    def test_user_registration_form_no_data(self):
+    def test_user_registration_form_no_data(self) -> None:
         form = UserRegistrationForm(data={})
         self.assertFalse(form.is_valid(), msg="Should be False")
 
-    def test_user_registration_form_if_email_is_blank(self):
+    def test_user_registration_form_if_email_is_blank(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "",
@@ -19,7 +20,7 @@ class TestUserRegistrationForm(TestCase):
         )
         self.assertTrue(form.is_valid(), msg="Should be True")
 
-    def test_user_registration_form_if_username_is_blank(self):
+    def test_user_registration_form_if_username_is_blank(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "test@test.com",
@@ -30,7 +31,7 @@ class TestUserRegistrationForm(TestCase):
         )
         self.assertFalse(form.is_valid(), msg="Should be False")
 
-    def test_user_registration_form_if_password1_is_blank(self):
+    def test_user_registration_form_if_password1_is_blank(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "test@test.com",
@@ -41,7 +42,7 @@ class TestUserRegistrationForm(TestCase):
         )
         self.assertFalse(form.is_valid(), msg="Should be False")
 
-    def test_user_registration_form_if_password2_is_blank(self):
+    def test_user_registration_form_if_password2_is_blank(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "test@test.com",
@@ -52,7 +53,7 @@ class TestUserRegistrationForm(TestCase):
         )
         self.assertFalse(form.is_valid(), msg="Should be False")
 
-    def test_user_registration_form_if_password1_and_password2_is_blank(self):
+    def test_user_registration_form_if_password1_and_password2_is_blank(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "test@test.com",
@@ -63,7 +64,7 @@ class TestUserRegistrationForm(TestCase):
         )
         self.assertFalse(form.is_valid(), msg="Should be False")
 
-    def test_user_registration_form_if_all_required_data_is_provided_correctly(self):
+    def test_user_registration_form_if_all_required_data_is_provided_correctly(self) -> None:
         form = UserRegistrationForm(
             data={
                 "email": "test@test.com",

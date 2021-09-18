@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
 
+# Own
 # DB operator
 from main_app.db.views_operator import get_tasks_data_from_db
 

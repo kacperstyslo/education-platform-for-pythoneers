@@ -1,7 +1,8 @@
 # pylint: disable=W0401, W0614
 
-import sys
 from .settings import *
+
+ALLOWED_HOSTS = ["*"]
 
 DEBUG = True
 

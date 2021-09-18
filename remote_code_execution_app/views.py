@@ -5,12 +5,13 @@ from typing import Any, Dict
 from django.views.generic import DetailView
 from django.http import HttpResponse, JsonResponse, QueryDict
 
+# Own
 from main_app.models import Tasks
-
+# Own
 # DB operators
 from remote_code_execution_app.db.views_operator import get_saved_user_solution_from_db
 from task_statistics_app.db.models_operators import SuccessfulSubmission
-
+# Own
 # My services
 from task_statistics_app.services.task_statistics_calculator import calc_task_success_rate
 from remote_code_execution_app.services import (

@@ -1,5 +1,5 @@
+# Own
 from users_app.models import UsersTasksSolutions
-
 from task_statistics_app.db.models_operators import SuccessfulSubmission
 
 

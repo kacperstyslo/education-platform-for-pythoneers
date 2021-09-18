@@ -8,8 +8,8 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose -f docker-compose.yml up --build -d
-  - docker exec -it education-platform-for-pythoneers bash -c "python manage.py test"
+  - docker-compose up --build -d
+  - docker exec -it education-platform-for-pythoneers-app bash -c "python manage.py test"
 
 notifications:
   email:

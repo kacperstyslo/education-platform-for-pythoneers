@@ -6,7 +6,7 @@ class MainSettingsTest(TestCase):
     def setUp(self) -> None:
         self.installed_apps = settings.INSTALLED_APPS
 
-    def test_if_are_created_apps_added_to_main_settings_file(self):
+    def test_if_are_created_apps_added_to_main_settings_file(self) -> None:
         """
         These tests were created to make sure that all created applications are in the application's
         main settings file.
