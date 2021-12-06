@@ -2,9 +2,6 @@
 # Education platform for Pythoneers
 [![Build Status](https://api.travis-ci.com/kacperstyslo/education-platform-for-pythoneers.svg?branch=master)](https://app.travis-ci.com/github/kacperstyslo/education-platform-for-pythoneers)
 
-# Application link
-http://educationplatformforpythoneers-env.eba-qm3mmjhw.us-east-1.elasticbeanstalk.com/
-
 # Table of contents
 
 * [General info](#general-info)
