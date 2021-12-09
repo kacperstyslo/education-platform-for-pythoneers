@@ -12,7 +12,7 @@ DATABASES = {
         "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "education-platform-for-pythoneers-db",
+        "HOST": "db",
         "PORT": "5432",
     }
 }

@@ -1,4 +1,8 @@
 # pylint: disable=C0413
+"""
+Set the applications to run inside docker containers.
+"""
+
 from os import path
 from inspect import cleandoc
 
@@ -37,21 +41,21 @@ def create_tasks() -> None:
                 '''
     import pytest
     from .user_solution import *
-    
+
     @pytest.mark.fib_test_case
     def test_fib_first():
         """
         Test for fib when n = 2
         """
         assert 1 == nth_fib(2)
-        
+
     @pytest.mark.fib_test_case
     def test_fib_second():
         """
         Test for fib when n = 6
         """
         assert 8 == nth_fib(6)
-    
+
     @pytest.mark.fib_test_case
     def test_fib_third():
         """
@@ -78,63 +82,63 @@ def create_tasks() -> None:
                 '''
     import pytest
     from .user_solution import *
-    
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_first():
         """
         Palindrome('abcdcba') should return true.
         """
         assert palindrome('abcdcba') is True
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_second():
         """
         Palindrome('nope') should return true.
         """
         assert palindrome('nope') is False
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_third():
         """
         Palindrome('aaaaaaaaaa') should return true.
         """
         assert palindrome('aaaaaaaaaa') is True
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_fourth():
         """
         Palindrome('not a palindrome') should return false.
         """
         assert palindrome('not a palindrome') is False
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_fifth():
         """
         Palindrome('a') should return true.
         """
         assert palindrome('a') is True
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_sixth():
         """
         Palindrome('test') should return false.
         """
         assert palindrome('test') is False
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_seventh():
         """
         Palindrome('sedes') should return true.
         """
         assert palindrome('sedes') is True
-    
-    
+
+
     @pytest.mark.palindrome_test_case
     def test_palindrome_eighth():
         """

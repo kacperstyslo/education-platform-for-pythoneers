@@ -9,7 +9,7 @@ before_script: pip install docker-compose
 
 script:
   - docker-compose up --build -d
-  - docker exec -it education-platform-for-pythoneers-app bash -c "python manage.py test"
+  - docker exec -it web-app bash -c "python manage.py test"
 
 notifications:
   email:

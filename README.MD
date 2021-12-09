@@ -36,12 +36,12 @@
 
 <details>
     <summary>Click here to see how to run app!</summary>
-    
+
     To run app localy (after running this command app will be available on: https:\\127.0.0.1:8000):
     docker-compose up --build -d; docker-compose ps --filter "status=running"
-   
+
     To run tests:
-    docker exec -it education-platform-for-pythoneers-app bash -c "python manage.py test"
+    docker exec -it web-app bash -c "python manage.py test"
 
 </details>
 
@@ -52,8 +52,3 @@ https://user-images.githubusercontent.com/57534862/127873801-0ff454b1-30ba-497c-
 
 ### Ranking table view
 ![ranking_page](https://user-images.githubusercontent.com/57534862/127873815-9a0b868f-42a3-4c55-946d-3f0e6f50a70f.PNG)
-
-
-
-
-

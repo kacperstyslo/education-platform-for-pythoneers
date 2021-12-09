@@ -1,14 +1,16 @@
 version: '3'
 
 services:
-  education-platform-for-pythoneers-app:
+  web-app:
     build: .
-    container_name: education-platform-for-pythoneers-app
-    hostname: education-platform-for-pythoneers-app
+    container_name: web-app
+    hostname: web-app
     environment:
       - PYTHONUNBUFFERED=1
       - DJANGO_SETTINGS_MODULE=education_platform_for_pythoneers.settings_docker
     entrypoint: [ "/bin/sh","-c" ]
+    links:
+      - selenium
     command:
       - |
         python manage.py makemigrations
@@ -18,13 +20,13 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      education-platform-for-pythoneers-db:
+      db:
         condition: service_healthy
 
-  education-platform-for-pythoneers-db:
+  db:
     image: postgres:12.5
-    container_name: education-platform-for-pythoneers-db
-    hostname: education-platform-for-pythoneers-db
+    container_name: db
+    hostname: db
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -40,10 +42,8 @@ services:
       retries: 6
     restart: always
 
-  education-platform-for-pythoneers-tests:
-    image: selenium/standalone-chrome
-    container_name: education-platform-for-pythoneers-tests
-    hostname: education-platform-for-pythoneers-tests
+  selenium:
+    image: selenium/standalone-chrome-debug:3.7.1
     ports:
       - "4444:4444"
     restart: always

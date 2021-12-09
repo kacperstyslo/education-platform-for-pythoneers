@@ -14,12 +14,6 @@ DEBUG = False
 ALLOWED_HOSTS = [getenv("APP_HOST", "127.0.0.1")]
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
     # My
     "main_app",
     "remote_code_execution_app",
@@ -29,6 +23,12 @@ INSTALLED_APPS = [
     # Additional packages
     "crispy_forms",
     "storages",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -107,7 +107,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/main-page/"
 
-if path.isfile(".env"):
+if getenv("AWS_STORAGE_BUCKET_NAME"):
     AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
     AWS_REGION_NAME = config("AWS_REGION_NAME")
     AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
